@@ -1,7 +1,6 @@
 <script setup>
-import {RouterLink, RouterView} from 'vue-router'
+import {RouterView} from 'vue-router'
 import {ref, watch, onMounted} from "vue";
-import {Sunny, Moon} from '@element-plus/icons-vue';
 import SwitchDarkButton from "@/components/SwitchDarkButton.vue";
 
 const isDark = ref(false);
@@ -33,7 +32,6 @@ onMounted(() => {
 <template>
   <el-container class="dark">
     <el-header style="display: flex;">
-      <div class="logo"></div>
       <div style="flex: 1"></div>
       <el-space :size="30">
         <el-link
@@ -50,7 +48,9 @@ onMounted(() => {
         <SwitchDarkButton/>
       </el-space>
     </el-header>
-    <el-main></el-main>
+    <el-main>
+      <router-view/>
+    </el-main>
   </el-container>
 </template>
 
