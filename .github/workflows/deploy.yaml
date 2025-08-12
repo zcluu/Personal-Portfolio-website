@@ -22,6 +22,9 @@ jobs:
       - name: "Install dependencies"
         run: npm install
 
+      - name: "Scan Images"
+        run: node scripts/scanImages.cjs
+        
       - name: "Build App"
         run: npm run build
 
